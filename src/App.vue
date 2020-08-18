@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <tool-bar></tool-bar>
-        <router-view></router-view>
+        <transition name="slice-page">
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 
@@ -20,6 +22,19 @@ export default {
 body {
     padding: 0;
     margin: 0;
+}
+
+/* Router Transition */
+.slice-page-enter-active {
+    transition: all 0.3s ease;
+}
+.slice-page-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slice-page-enter, .slice-page-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
 }
 </style>
 
