@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <tool-bar></tool-bar>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ToolBar from "./components/ToolBar.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    name: "App",
+    components: {
+        "tool-bar": ToolBar,
+    },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+    padding: 0;
+    margin: 0;
 }
 </style>
+
+<!--
+
+CLI 2.x vs CLI 3.x
+
+ - 명령어
+    - 2.x : vue init '프로젝트 템플릿 이름' '파일 위치'
+    - 3.x : vue create '프로젝트 이름'
+
+ - 웹팩 설정 파일
+     - 2.x : 노출 o
+     - 3.x : 노출 x
+
+ - 프로젝트 구성
+     - 2.x : 깃헙의 템플릿 다운로드
+     - 3.x : 플러그인 기반으로 기능 추가
+
+ - ES6 이해도
+     - 2.x : 필요 x
+     - 3.x : 필요 o
+
+-->
