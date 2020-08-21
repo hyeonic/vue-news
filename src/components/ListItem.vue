@@ -34,30 +34,31 @@
 
 <script>
 export default {
-    created() {
-        const name = this.$route.name;
-        let fetchName = "";
-        if (name === "news") {
-            fetchName = "FETCH_NEWS";
-        } else if (name === "ask") {
-            fetchName = "FETCH_ASK";
-        } else if (name === "jobs") {
-            fetchName = "FETCH_JOBS";
-        }
-        this.$store.dispatch(fetchName);
-    },
+    // created() {
+    //     const name = this.$route.name;
+    //     let fetchName = "";
+    //     if (name === "news") {
+    //         fetchName = "FETCH_NEWS";
+    //     } else if (name === "ask") {
+    //         fetchName = "FETCH_ASK";
+    //     } else if (name === "jobs") {
+    //         fetchName = "FETCH_JOBS";
+    //     }
+    //     this.$store.dispatch(fetchName);
+    // },
     computed: {
         items() {
-            const name = this.$route.name;
-            if (name === "news") {
-                return this.$store.state.news;
-            } else if (name === "ask") {
-                return this.$store.state.ask;
-            } else if (name === "jobs") {
-                return this.$store.state.jobs;
-            } else {
-                return null;
-            }
+            return this.$store.state.list;
+            // const name = this.$route.name;
+            // if (name === "news") {
+            //     return this.$store.state.news;
+            // } else if (name === "ask") {
+            //     return this.$store.state.ask;
+            // } else if (name === "jobs") {
+            //     return this.$store.state.jobs;
+            // } else {
+            //     return null;
+            // }
         },
     },
 };

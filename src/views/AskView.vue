@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- HOC로 인하여 필요 없어짐 -->
         <list-item></list-item>
         <!-- <ul class="ask-list">
             <li class="post" v-for="(item, index) in askItems" v-bind:key="index">
@@ -19,6 +20,8 @@
 
 <script>
 import ListItem from "../components/ListItem.vue";
+import ListMixin from "../mixins/ListMixin.js";
+// import bus from "../utils/bus.js";
 // import { mapGetters } from "vuex";
 
 export default {
@@ -36,17 +39,29 @@ export default {
     //         ask: (state) => state.ask,
     //     }),
     // },
-
+    mixins: [ListMixin],
     // created() {
-    //     this.$store.dispatch("FETCH_ASK");
+    //     // this.$store.dispatch("FETCH_ASK");
+    //     // fetchAskList()
+    //     //     .then((response) => {
+    //     //         this.ask = response.data;
+    //     //     })
+    //     //     .catch((error) => {
+    //     //         console.log(error);
+    //     //     });
 
-    // fetchAskList()
-    //     .then((response) => {
-    //         this.ask = response.data;
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     });
+    //     bus.$emit("start:spinner");
+    //     setTimeout(() => {
+    //         this.$store
+    //             .dispatch("FETCH_ASK")
+    //             .then(() => {
+    //                 console.log("fetched");
+    //                 bus.$emit("end:spinner");
+    //             })
+    //             .catch((error) => {
+    //                 console.log(error);
+    //             });
+    //     }, 2000);
     // },
     components: {
         ListItem,

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- HOC로 인하여 필요 없어짐 -->
         <list-item></list-item>
         <!-- <ul class="jobs-list">
             <li class="post" v-for="(job, index) in this.$store.state.jobs" v-bind:key="index">
@@ -23,6 +24,8 @@
 
 <script>
 import ListItem from "../components/ListItem.vue";
+import ListMixin from "../mixins/ListMixin.js";
+// import bus from "../utils/bus.js";
 // import { mapGetters } from "vuex";
 
 export default {
@@ -38,6 +41,23 @@ export default {
     //         .catch((error) => {
     //             console.log(error);
     //         });
+    // },
+    mixins: [ListMixin],
+    // created() {
+    //     // this.$store.dispatch("FETCH_JOBS");
+
+    //     bus.$emit("start:spinner");
+    //     setTimeout(() => {
+    //         this.$store
+    //             .dispatch("FETCH_JOBS")
+    //             .then(() => {
+    //                 console.log("fetched");
+    //                 bus.$emit("end:spinner");
+    //             })
+    //             .catch((error) => {
+    //                 console.log(error);
+    //             });
+    //     }, 2000);
     // },
     components: {
         ListItem,
