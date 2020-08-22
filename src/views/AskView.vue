@@ -63,6 +63,9 @@ export default {
     //             });
     //     }, 2000);
     // },
+    // mounted() {
+    //     bus.$emit("end:spinner");
+    // },
     components: {
         ListItem,
     },

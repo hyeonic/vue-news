@@ -68,11 +68,11 @@ a:hover {
     transition: all 0.3s ease;
 }
 .slice-page-leave-active {
-    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+    transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slice-page-enter, .slice-page-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateX(10px);
+    transform: translateX(5px);
     opacity: 0;
 }
 </style>
@@ -98,3 +98,12 @@ CLI 2.x vs CLI 3.x
      - 3.x : 필요 o
 
 -->
+
+<!--
+    [데이터 호출 시점]
+    1. 컴포넌트 라이프 사이클 훅
+     - created: (컴포넌트가 생성)되자마자 호출되는 로직
+
+    2. 라우터 네비게이션 가드
+     - 특정 URL로 접근하기 전의 동작을 정의하는 속성(함수)
+ -->

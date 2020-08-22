@@ -40,6 +40,9 @@ export default {
     //         console.log(error);
     //     });
     // },
+    // mounted() {
+    //     bus.$emit("end:spinner");
+    // },
 };
 </script>
 
