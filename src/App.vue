@@ -29,6 +29,7 @@ export default {
         },
     },
     created() {
+        console.log(process.env.VUE_APP_TITLE);
         bus.$on("start:spinner", this.startSpinner);
         bus.$on("end:spinner", this.endSpinner);
     },
@@ -106,4 +107,15 @@ CLI 2.x vs CLI 3.x
 
     2. 라우터 네비게이션 가드
      - 특정 URL로 접근하기 전의 동작을 정의하는 속성(함수)
+ -->
+
+ <!--
+    1. 외부 라이브러리 모듈화
+     - 이유
+        1) Vue.js 관련 라이브러리가 없을 때 일반 라이브러리를 결합할 수 있어야 한다.
+     - 종류
+        1) 차트
+        2) 데이터 피커
+        3) 테이블
+        4) 스피너
  -->
